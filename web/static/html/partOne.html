@@ -1,0 +1,95 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-21 01:16:01
+ * @LastEditTime: 2022-05-02 16:27:25
+ * @LastEditors: Please set LastEditors
+ * @FilePath: \计算机设计大赛\partOne.html
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>一带一路数据可视化</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/partOne.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layer/layer.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/layer.js"></script>
+</head>
+
+<body>
+    <script src="../js/flexible.js"></script>
+    <!--页面主体部分-->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel line1">
+                <h2>海上丝路贸易情况</h2>
+                <div class="chart" style="width:26vw ;height:42vh;"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar1">
+                <!--中国对沿线国家的投资情况-->
+                <div class="chart" style="width:26vw ;height:42vh;"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column">
+            <!--亚欧地图头上的板块制作-->
+            <div class="no">
+                <!--放数字-->
+                <div class="no-hd">
+                    <ul>
+                        <li id="stratage-partner">0</li>
+                        <li id="duration">0</li>
+                    </ul>
+                </div>
+                <!--放文字-->
+                <div class="no-bd">
+                    <ul>
+                        <li>合作国家数</li>
+                        <li>战略年数</li>
+                    </ul>
+                </div>
+            </div>
+            <!--丝路地图模块-->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+            <!--双边贸易展示框-->
+           
+            <div class="BTA-box" style="display: none;">
+                <span></span><span></span><span></span><span></span>
+                <div id="BTA-container" >
+                    <div class="BTA-nav" style="height: 40px;width:556px;">
+                        <div id="self-GDP" class="active">GDP</div>
+                        <div id="BTA" >双边贸易</div>
+                    </div>
+                    <div id="BTA-chart" style="width: 556px;height:516px;">
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="panel bar2">
+                <h2>中欧班列开行情况统计</h2>
+                <div class="chart" style="width:26vw ;height:42vh;"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel">
+                <h2>“一带一路”合作国家分布</h2>
+                <div class="chart pie1" style="width:26vw ;height:42vh;"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/echarts5.min.js"></script>
+    <script src="../js/world.js"></script>
+    <script src="../js/partOne.js"></script>
+</body>
+</html>

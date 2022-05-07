@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-06 20:33:33
+ * @LastEditTime: 2022-05-02 14:48:34
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \Uncle-Cao的git本地库\计算机设计大赛\partFourhtml\partFour1.html
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>逛丝路古城</title>
+    <link rel="stylesheet" href="../css/partFour1.css" />
+</head>
+<body>
+    <script src="../js/flexible.js"></script>
+    <div class="logo shadow"><img src="../images/partFour_images/partFour1/艺术字.png" ></div>
+    <div class="mainbox">
+        <div class="column">
+            <a href="partFour2.html">塔什干</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour3.html">布哈拉</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour4.html">撒马尔罕</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour5.html">埃及卢克索神庙</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour6.html">新加坡圣淘沙</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour7.html">泰国曼谷</a>
+            <img src="">
+        </div>
+        <div class="column">
+            <a href="partFour8.html">希腊雅典</a>
+            <img src="">
+        </div>  
+    </div>
+</body>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+    function getImage(data){
+        let covers=data.partFour.index;
+        $(".column img:eq(0)").attr('src',covers.Tashkent);
+        $(".column img:eq(1)").attr('src',covers.Bukhara);
+        $(".column img:eq(2)").attr('src',covers.Samarkand);
+        $(".column img:eq(3)").attr('src',covers.LuxorTemple);
+        $(".column img:eq(4)").attr('src',covers.Sentosa);
+        $(".column img:eq(5)").attr('src',covers.Bangkok);
+        $(".column img:eq(6)").attr('src',covers.Athens);
+    }
+</script>
+<script src="../images/images.js?cb=getImage"></script>
+
+</html>

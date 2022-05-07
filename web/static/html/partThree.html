@@ -1,0 +1,71 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-13 22:47:45
+ * @LastEditTime: 2022-05-02 16:13:30
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \Uncle-Cao的git本地库\计算机设计大赛\partThree.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/partThree.css" />
+    <title>一带一路成绩单</title>
+</head>
+
+<body>
+    <section>
+        <div class="accordion-nav">
+            <ul class="accordion" data-level="1">
+                <li data-level="1">
+                    <input type="checkbox" name="level-1" id="item1">
+                    <label for="item1">"一带一路"国际影响力<img class="list-icons" /></label>
+                    <ul data-level="2">
+                        <li data-level="2"  data-index="0" class="navs">"一带一路"关注度</li>
+                        <li data-level="2"  data-index="1" class="navs">"一带一路"朋友圈</li>
+                        <li data-level="2"  data-index="2" class="navs">"一带一路"多国发展战略精准对接</li>
+                    </ul>
+                </li>
+                <li data-level="1">
+                    <input type="checkbox" name="level-1" id="item2">
+                    <label for="item2">"一带一路"基础设施建设<img class="list-icons" /></label>
+                    <ul data-level="2">
+                        <li data-level="2" style="padding:0">
+                            <input type="checkbox" name="level-2" id="sitem1" />
+                            <label for="sitem1">中欧班列联通水平</label>
+                            <ul data-level="3">
+                                <li data-level="3" data-index="3" class="navs">中欧班列开行数量</li>
+                    
+                                <li data-level="3" data-index="4" class="navs">中欧班列线路分布情况</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li data-level="1">
+                    <input type="checkbox" name="level-1" id="item3">
+                    <label for="item3">"一带一路"加速外贸回暖<img class="list-icons" /></label>
+                    <ul data-level="2">
+                        <li data-level="2" data-index="5" class="navs">加速外贸折线图</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="charts-container">
+            <div  id= "charts-viewer" class="charts-viewer" src="" name="charts-viewer" style="height:560px;width:560px"></div>     
+        </div>
+
+    </section>
+
+</body>
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/echarts5.min.js"></script>
+<script src="../js/echart-gl.js"></script>
+
+<script  src="../js/partThree.js"></script>
+
+</html>

@@ -1,0 +1,211 @@
+/*公共导航栏样式类*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nodisplay {
+    display: none !important;
+}
+
+/**
+ *遮盖板部分
+ */
+.cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/cover.png");
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+
+/*标题艺术字*/
+#title{
+    position: absolute;
+   
+    width: 70vw;
+    height: 12vh;
+    top:22%;
+    left: 15vw;
+    user-select: none;
+}
+
+#sub-title{
+    position: absolute;
+    left:57vw;
+    top:47vh;
+    font-size: 40px;
+    color: #bc750a;
+    user-select: none;
+}
+#sub-title::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 3px;
+    background-color: #bc630a;
+    left: -170px;
+    top:27px;
+    user-select: none;
+}
+#sub-title1{
+   
+    color: #f1a93e;
+    user-select: none;
+}
+
+/*遮盖板切换按钮*/
+#entrance {
+    display: block;
+    position: absolute;
+    left:44vw;
+    top:66vh;
+    margin: 0 auto;
+    width: 12vw;
+    height: 8vh;
+    border: 5px solid rgba(233, 179, 150, 0.5);
+    font-size: 1.2em;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 60px;
+    letter-spacing: 1px;
+    color: white;
+    border-radius: 5px;
+    background: #d4a55a;
+    cursor: pointer;
+    box-shadow:
+        3.2px 3.2px 2.2px rgba(196, 104, 11, 0.14),
+        7.6px 7.6px 5.2px rgba(196, 104, 11, 0.101),
+        14.3px 14.4px 9.6px rgba(196, 104, 11, 0.083),
+        25.5px 25.7px 17px rgba(196, 104, 11, 0.07),
+        47.6px 48px 31.4px rgba(196, 104, 11, 0.057),
+        114px 115px 80px rgba(196, 104, 11, 0.039);
+    animation: pulse 1.5s infinite;
+    user-select: none;
+}
+
+.pulse-button:hover {
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 20px rgba(#f1a93e, 1);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(#f1a93e, 0.5);
+    }
+}
+
+
+
+
+
+
+
+
+
+/*导航栏*/
+header {
+    display: block;
+    width: 100vw;
+    height: 5vh;
+    background-color: rgba(89, 167, 235, 0.1);
+    overflow: hidden;
+    border: 0.5vh 0 solid rgba(15, 93, 219, 0.7);
+    box-sizing: border-box;
+}
+
+/*页面展示区样式设置*/
+
+
+#main {
+    border: none;
+    display: block;
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(181, 237, 237);
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+.logo {
+    display: block;
+    height: 5vh;
+    width: 20vw;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    float: left;
+}
+
+.nav-container {
+    position: relative;
+    width: 80vw;
+    height: 5vh;
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.nav-container>div {
+    border: 3px solid rgba(121, 164, 233, 0.2);
+    border-radius: 3px;
+}
+
+/*导航栏图标与内容*/
+
+.nav-backboard {
+    width: 14vw;
+    height: 5vh;
+    box-sizing: border-box;
+    flex: none;
+    float: left;
+    position: absolute;
+    background-color: #01d0d7e2;
+    right: 46vw;
+    z-index: -1;
+    transition: all 500ms;
+}
+
+.nav-item {
+    float: left;
+    width: 14vw;
+    overflow: hidden;
+    margin-right: 1vw;
+    background-color: rgba(255, 255, 255, 0.01);
+    box-sizing: border-box;
+}
+
+.nav-active {}
+
+.nav-icons,
+.nav-content {
+    margin-left: 0.2vw;
+    padding-top: 0.55vh;
+    text-align: center;
+    height: 100%;
+    float: left;
+    display: block;
+    box-sizing: border-box;
+}
+
+#nav-icons {
+    width: 4vh;
+    height: 4vh;
+}
+
+.nav-content {}

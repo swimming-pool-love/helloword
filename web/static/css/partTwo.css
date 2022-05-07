@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 5vh;
+    background-color: #239191b4;
+}
+.main-section{
+    margin: 0 auto  ;
+    width: 84vw;
+    height: 75vh;
+    overflow: hidden;
+    /*测试用bgc*/
+    background-color:#0091B2;
+}
+.wordCloud-area,.search-area{
+    float: left;
+    width: 40vw;
+    height: 70vh;
+    margin-top: 2.5vh;
+}
+
+.wordCloud-area{
+    /*词云部分容器(溢出限制)*/
+    position: relative;
+    overflow: hidden;
+    margin-left: 2vw;
+}
+#wordCloudCanvas{
+    position: absolute;
+    left: -15vw;
+}
+.header{
+    overflow: hidden;
+    font-size: 14px;
+}
+h1{
+    display: inline-block;
+}
+
+
+/*搜索部分*/
+.search-area{
+    margin-right: 2vw;
+    padding-top: 10px;
+}
+.search{
+    width: 65%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgb(202, 228, 235);
+}
+.search form{
+    display: block;
+    padding: 0;
+    width: 70%;
+    float: left;
+    background: rgb(141, 176, 185);
+}
+.search form input{
+    height: 5vh;
+    width: 100%;    
+}
+.icon{
+    margin-left:5%;
+    width:25%;
+    float: left;
+    overflow: hidden;
+    background: rgb(124, 208, 231);
+    position: relative;
+}
+.icon span{
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.2em;
+    width: auto;
+    height:5vh;
+    margin: 0 auto;
+    float: left;
+}
+.icon svg{
+     
+    display: block; 
+    right: 10%;
+    width: 3vh;
+    height: 3vh;
+    float: left;
+}
+
+/*历史记录*/
+.history-list{
+    margin: 1vh auto;
+    width:70%;
+    height:3vh;
+    overflow: hidden ;
+}
+.history{
+    width:5vw;
+    margin-right:1vw;  
+    float: left;
+    overflow: hidden;
+    height:3vh ;
+    border-radius:1.3vh;
+    background-color: rgb(141, 194, 206);
+    padding: 0 2.5px 0 5px;
+    transition: all 0.5s ease-in-out;
+}
+.history-wrap{
+    height: 20px;
+    width: 6.5vw;
+    position: relative;
+}
+.history span{
+    width: 5vw;
+    height: 20px;
+    float: left;
+    display:block;
+    font-size: 0.8em;
+    line-height: 20px; 
+    text-align: center;
+}   
+#close{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:0;
+    float: left;
+    height:1vw;
+    width: 1vw;
+    border-radius:50%;
+    opacity: 0.5;
+}
+
+
+.result-container{
+    position: relative;
+    height: 58vh;
+    width:90%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rgb(149, 197, 236);
+}
+.result-container::before{
+    content: "";
+    display: block;
+    width:6vw ;
+    height:6vh;
+    border-top: 3px solid rgb(5, 21, 164);
+    border-left: 3px solid rgb(5, 21, 164);
+}
+.result-container::after{
+    position:absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    right: 0;
+    width:6vw ;
+    height:6vh;
+    border-right: 3px solid rgb(5, 21, 164);
+    border-bottom: 3px solid rgb(5, 21, 164);
+}
+
+/*底部导航栏*/
+
+.footer{
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    padding: 5px 0;
+}
+.nav-container{
+    border: 2px solid rgb(14, 91, 207);
+    position: relative;
+    height: 18vh;
+    width: 83vw;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 6;
+}
+.nav-list{
+    height: 100%;
+    position: absolute;
+    left:0px;
+    display: flex;
+    align-items: center;
+}
+.nav-list>.nav{
+   
+    width:15vw;
+    height:100%;
+    margin-right:2vw;
+}
+.nav-list>.nav> a{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+img{
+    box-sizing: border-box;
+  
+    width: 100%;
+    height: 100%;
+}

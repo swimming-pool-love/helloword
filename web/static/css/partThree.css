@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+li {
+    /*清除li元素前面的项目符号*/
+    list-style: none;
+}
+
+/*包含以下五种的链接*/
+a,a:link,a:hover,a:visited,a:active,a:focus {
+/*清除a标签的固有样式*/
+    text-decoration: none;
+    color:rgb(88, 118, 118);
+}
+
+
+.accordion-nav {
+    /*设置导航背景框*/
+    float: left;
+    overflow: hidden;
+    width: 410px;
+    height: 600px;
+    border: 5px solid #7aa0d884;
+    border-radius: 5px;
+}
+
+.accordion {
+    /*手风琴*/
+    overflow: hidden;
+    display: block;
+    max-height: 510px;
+    width: 400px;
+    border: 1px solid #fdd;
+    border-radius: 5px;
+}
+
+.charts-container {
+    float: left;
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.charts-container::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #399953;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#3D7FE3, #3D7FE3), linear-gradient(#00A7F7, #00A7F7), linear-gradient(#00C6E5, #00C6E5), linear-gradient(#00DFB8, #00DFB8);
+    animation: rotate 8s linear infinite;
+}
+
+.charts-container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+}
+
+.charts-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+
+.accordion li {
+    width: 100%;
+}
+
+input {
+    /*将单选按钮隐藏*/
+    display: none;
+}
+
+li[data-level="1"]>label {
+    font-size: 24px;
+    /*一级lable元素将其转化为块级元素并设值宽高*/
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    color: rgb(192, 221, 227);
+    background-color: rgb(97, 155, 205);
+    cursor: pointer;
+}
+
+.list-icons {
+    /*右侧箭头图标*/
+
+}
+
+.accordion>li label:hover {
+    background-color: rgb(109, 173, 228);
+}
+
+li[data-level="1"]:not(:first-child)>label {
+    /*给除了第一个label外的一级label添加上边界*/
+    border-top: 2px solid rgb(53, 81, 183);
+}
+
+ul[data-level="2"] {
+    /*设置二级列表的样式*/
+    width: 100%;
+    background-color: rgba(85, 172, 209, 0.684);
+}
+
+ul[data-level="2"]:not(:nth-child(2))>li {
+    line-height: 40px;
+}
+
+li[data-level="2"] {
+    /*给二级列表设置公共属性*/
+    position: relative;
+    width: 100%;
+    max-height: 0;
+    /*默认二级li不展开*/
+    padding: 0 30px;
+    color: rgb(88, 118, 118);
+    overflow: hidden;
+    transition: all 0.6s;
+}
+
+li[data-level="1"]:not(:nth-child(2))>input:checked~ul[data-level="2"]>li {
+    max-height: 40px;
+}
+
+li[data-level="1"]:nth-child(2)>input:checked~ul[data-level="2"]>li {
+    max-height: 150px;
+}
+
+
+
+li[data-level="2"]>label {
+    font-size: 18px;
+    /*lable元素将其转化为块级元素并设值宽高*/
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px 30px;
+    color: rgb(192, 221, 227);
+    background-color: rgb(96, 130, 160);
+    cursor: pointer;
+}
+
+li[data-level="2"]>label:hover {
+    /*二级展开栏悬浮样式*/
+    background-color: rgb(107, 144, 176);
+}
+
+
+
+ul[data-level="2"]:not(:nth-child(2))>li::before {
+    /*给二级li添加前置小条条*/
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 5px;
+    height: 34px;
+    background-color: rgb(79, 135, 209);
+    transform: scaleY(0);
+    transition: all 0.5s;
+}
+
+ul[data-level="2"]:not(:nth-child(2))>li:hover::before {
+    transform: scaleY(1);
+}
+
+
+ul[data-level="3"] {
+    /*设置二级列表的样式*/
+    width: 100%;
+    background-color: rgba(183, 218, 233, 0.684);
+}
+
+li[data-level="3"] {
+    /*给二级列表设置公共属性*/
+    position: relative;
+    width: 100%;
+    /*默认三级内容不显示*/
+    height: 0;
+    padding: 0 45px;
+    color: rgb(58, 79, 79);
+    transition: all .6s;
+    overflow: hidden;
+}
+
+li[data-level="2"]>input:checked~ul[data-level="3"]>li {
+    height: 40px;
+}
+
+ul[data-level="3"]>li::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 5px;
+    height: 34px;
+    background-color: rgb(70, 115, 175);
+    transform: scaleY(0);
+    transition: all 0.5s;
+
+}
+
+ul[data-level="3"]>li:hover::before {
+    transform: scaleY(1);
+}

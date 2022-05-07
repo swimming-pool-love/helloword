@@ -1,0 +1,116 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-24 00:16:48
+ * @LastEditTime: 2022-05-02 14:09:17
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \Uncle-Cao的git本地库\partTwo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WordCloud</title>
+    <script type="text/javascript" src="../static/js/echarts5.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts-wordcloud.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../static/css/partTwo.css">
+</head>
+
+<body>
+    <!--页面主体-->
+    <section class="main-section">
+        <!--词云-->
+        <div class="wordCloud-area">
+
+            <div class="WordCloud" id="wordCloudCanvas" style="height:70vh;width:70vw;"></div>
+            <!--词云-->
+        </div>
+
+        <!--右侧搜索-->
+        <div class="search-area">
+            <div class="search">
+                 <form name="search"action="/search/" method="POST">
+                    <p>
+                    {% if key %}
+                        <input type="text" name="key_word" value="{{key}}">
+                    {% else %}
+                        <input type="text" name="key_word">
+                    {% endif %}
+                    <input type="submit" value="Search">
+                    </p>
+                </form>
+            </div>
+            <div class="history-list">
+                <div></div>
+                <!--这个空标签用于辅助插入-->
+            </div>
+            <div class="result-container" id="result">
+                {% block high_search%}
+                {% endblock %}
+                {% if error%}
+                {% for doc in docs%}
+                <div id="doc">
+                    <ul id="navigation">
+                    <p><big><a href="/search/{{doc.id}}/" target="_blank">{{doc.title}}</a></big></p>
+                    <p>{{doc.time}}<br/>{{doc.snippet}}<br/>
+                    <a href="{{ doc.url }}" target="_blank">{{doc.url}}</a>
+                    </p>
+                    </ul>
+                </div>
+                <br/>
+                {% endfor %}
+                {% block next %}
+                <ul>
+                    {% for i in page %}
+                    <a href="/search/page/{{i}}/">{{i}}</a>&nbsp;
+                    {% endfor %}
+                </ul>
+                {% endblock %}
+                {% else %}
+                <p>对不起，没有您搜索的网页！</p>
+                {% endif %}
+                <div id="footer">
+                    <hr>
+                    &copy;
+                    <script type="text/javascript">
+                      var today = new Date();
+                      var year = today.getFullYear();
+                      document.write(year)
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--页面底部专题导航-->
+    <section class="footer">
+        <div class="nav-container">
+            <div class="nav-list">
+                <div class="nav">
+                    <a href="https://www.yidaiyilu.gov.cn/xwzx/xgcdt/228900.htm"  target="_blank"><img
+                            src="../static/images/partTwo_images/pic1.png" alt="#" /></a>
+                </div>
+                <div class="nav">
+                    <a href="https://www.yidaiyilu.gov.cn/xwzx/hwxw/235613.htm"  target="_blank"><img
+                            src="../static/images/partTwo_images/pic2.png" alt="#" /></a>
+                </div>
+                <div class="nav">
+                    <a href="https://www.yidaiyilu.gov.cn/xwzx/dfdt/232231.htm" target="_blank"><img
+                            src="../static/images/partTwo_images/pic3.png" alt="#" /></a>
+                </div>
+                <div class="nav">
+                    <a href="https://www.yidaiyilu.gov.cn/xwzx/hwxw/231627.htm" target="_blank"><img
+                            src="../static/images/partTwo_images/pic4.png" alt="#" /></a>
+                </div>
+                <div class="nav">
+                    <a href="https://www.yidaiyilu.gov.cn/xwzx/hwxw/227503.htm" target="_blank"><img
+                            src="../static/images/partTwo_images/pic5.png" alt="#" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="../static/js/partTwo.js">
+</script>

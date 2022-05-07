@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+.BTA-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: #1d1186c9;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  border: 2px solid #7f2aad;
+  color: white;
+  padding: 20px;
+}
+
+#BTA-container {
+  width: 555px;
+  height: 555px;
+}
+
+.BTA-nav {
+  width: 556px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.BTA-nav>div {
+  box-sizing: border-box;
+  line-height: 34px;
+  font-size: 24px;
+  width: 278px;
+  height: 40px;
+  float: left;
+  border: 3px solid rgba(78, 82, 131, 0.482);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+.active{
+  background-color: rgba(111, 123, 251, 0.5);
+}
+
+#BTA-chart {
+  background-color: rgba(111, 123, 251, 0.5);
+}
+
+
+
+.BTA-box #BTA-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid #e27557;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(55, 66, 186, 0.5);
+
+}
+
+.BTA-box>span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+.BTA-box>span:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.BTA-box>span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.BTA-box>span:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.BTA-box>span:nth-child(4) {
+  transform: rotate(270deg);
+}
+
+.BTA-box>span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #50dfdb;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      transform: scaleX(0);
+      transform-origin: left;
+  }
+
+  50% {
+      transform: scaleX(1);
+      transform-origin: left;
+  }
+
+  50.1% {
+      transform: scaleX(1);
+      transform-origin: right;
+
+  }
+
+  100% {
+      transform: scaleX(0);
+      transform-origin: right;
+
+  }
+
+
+}
+/*声明字体*/
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+body {
+  /*给出了几种配色*/
+  background-image: radial-gradient(circle, #7095fe, #678bf4, #5d81eb, #5478e1, #4a6ed8, #4468d5, #3e63d2, #375dcf, #345ad2, #3157d4, #2e54d7, #2c51d9);
+  line-height: 1.15;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+header {
+  height: 5vh;
+  background-color: rgba(242, 240, 239,0.2);
+}
+
+.mainbox {
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 0.125rem;
+}
+.mainbox .column {
+  flex: 3;
+}
+.mainbox .column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.125rem 0.1875rem;
+}
+.mainbox .panel {
+  position: relative;
+  height: 47vh;/*若是感觉页面Y轴超出或过矮，可以尝试调整此值*/
+  border: 1px solid rgba(0, 245, 171, 0.35);
+  background: url(../images/line.png) rgba(22, 34, 77, 0.3);
+  padding: 0 0.5vh;
+  margin-bottom: 2vh;
+}
+.mainbox .panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+.mainbox .panel::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+  content: "";
+}
+.mainbox .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.mainbox .panel .panel-footer::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+.mainbox .panel .panel-footer::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+  content: "";
+}
+.mainbox .panel h2 {
+  height: 0.6rem;
+  color: #fff;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+.mainbox .panel .chart {
+  height: 5.5rem;
+}
+.mainbox .no {
+  background: rgba(16, 43, 125, 0.1);
+  padding: 0.1875rem;
+}
+.mainbox .no .no-hd {
+  position: relative;
+  border: 1px solid rgba(4, 65, 47, 0.1);
+  background-color: rgba(15, 36, 97, 0.2);
+}
+.mainbox .no .no-hd::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 30px;
+  height: 10px;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+.mainbox .no .no-hd::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "";
+  width: 30px;
+  height: 10px;
+  border-bottom: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+}
+.mainbox .no .no-hd ul {
+  display: flex;
+}
+.mainbox .no .no-hd ul li {
+  position: relative;
+  flex: 1;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  color: #ffeb7b;
+  text-align: center;
+  font-family: "electronicFont";
+}
+.mainbox .no .no-hd ul li::after {
+  position: absolute;
+  content: "";
+  top: 25%;
+  right: 0;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.mainbox .no .no-bd ul {
+  display: flex;
+}
+.mainbox .no .no-bd ul li {
+  flex: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.225rem;
+  height: 0.625rem;
+  line-height: 0.5rem;
+  padding-top: 0.125rem;
+}
+.mainbox .map {
+  position: relative;
+  height: 10.125rem;
+}
+.mainbox .map .map1 {
+  width: 6.475rem;
+  height: 6.475rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/map.png);
+  background-size: 100% 100%;
+  opacity: 0.3;
+}
+.mainbox .map .map2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8.0375rem;
+  height: 8.0375rem;
+  background: url(../images/lbx.png);
+  background-size: 100% 100%;
+  animation: rotate1 15s linear infinite;
+}
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.mainbox .map .map3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.075rem;
+  height: 7.075rem;
+  background: url(../images/jt.png);
+  background-size: 100% 100%;
+  animation: rotate2 10s linear infinite;
+}
+@keyframes rotate2 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+.mainbox .map .chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.125rem;
+}
